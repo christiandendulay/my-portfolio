@@ -1,0 +1,51 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "codegen": "graphql-codegen --config codegen.ts",
+    "dev": "next dev",
+    "format": "prettier --write . && sort-package-json",
+    "format:check": "prettier --check . && sort-package-json --check",
+    "lint": "eslint",
+    "pull-schema": "tsx scripts/pull-schema.ts",
+    "start": "next start",
+    "types": "pnpm pull-schema && pnpm codegen"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "next": "16.2.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^7.1.1",
+    "@graphql-codegen/typescript": "^6.0.2",
+    "@graphql-codegen/typescript-operations": "^6.0.3",
+    "@graphql-tools/schema": "^10.0.33",
+    "@graphql-tools/utils": "^11.1.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "dotenv": "^17.4.2",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.6",
+    "lint-staged": "^17.0.6",
+    "prettier": "^3.8.3",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "simple-git-hooks": "^2.13.1",
+    "sort-package-json": "^3.6.1",
+    "tailwindcss": "^4",
+    "tsx": "^4.22.3",
+    "typescript": "^5"
+  }
+}

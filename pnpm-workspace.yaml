@@ -1,0 +1,8 @@
+allowBuilds:
+  esbuild: false
+  sharp: false
+  simple-git-hooks: false
+  unrs-resolver: false
+ignoredBuiltDependencies:
+  - sharp
+  - unrs-resolver
