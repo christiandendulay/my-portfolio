@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+html {
+  height: 100%;
+}
 /* ─── CSS Custom Properties ─── */
 :root {
   --background: #f5f1eb;
@@ -30,6 +33,7 @@ body {
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+  min-height: 100%;
 }
 
 h1,
@@ -48,6 +52,10 @@ a {
 
 a:hover {
   color: var(--teal-hover);
+}
+
+button {
+  cursor: pointer;
 }
 
 /* ─── Utility classes using @layer ─── */

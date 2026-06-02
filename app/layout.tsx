@@ -1,12 +1,13 @@
 import { ThemeProvider, ThemeToggle } from './components/theme';
 import Script from 'next/script';
 import './globals.css';
+import { HeaderNavigation } from './components/header/HeaderNavigation';
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <ThemeProvider>
+          <HeaderNavigation />
           <main>{children}</main>
           <ThemeToggle />
         </ThemeProvider>
