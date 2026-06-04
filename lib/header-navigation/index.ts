@@ -4,5 +4,5 @@ import { HeaderNavigation } from '@/types/contentful';
 
 export async function getHeaderNavigation(): Promise<HeaderNavigation> {
   const data = await client.request(GET_HEADER_NAVIGATION);
-  return (data as any).headerNavigationCollection?.items?.[0] ?? null;
+  return data.headerNavigationCollection?.items?.[0] ?? null;
 }
