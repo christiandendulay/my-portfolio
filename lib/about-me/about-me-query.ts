@@ -15,6 +15,10 @@ export const GET_ABOUT_ME = gql`
         specializations
         cms
         headless
+        profilePicture {
+          url
+          title
+        }
       }
     }
   }
