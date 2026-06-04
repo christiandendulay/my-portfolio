@@ -21,7 +21,6 @@ export async function AboutMe() {
   return (
     <section id="about" className="space-y-8">
       <div className="grid items-center gap-12 md:grid-cols-2">
-        {/* Left: Profile Image */}
         <div className="bg-surface relative mx-auto aspect-[3/4] max-w-md overflow-hidden rounded-lg md:mx-0">
           {profilePicture?.url ? (
             <Image
@@ -33,13 +32,13 @@ export async function AboutMe() {
               loading="eager"
             />
           ) : (
+            /* Fix fallback picutre */
             <div className="bg-border/50 flex h-full items-center justify-center">
               <span className="text-muted text-sm">Profile Image</span>
             </div>
           )}
         </div>
 
-        {/* Right: Content */}
         <div className="space-y-6">
           <div className="space-y-2">
             <h2 className="text-heading text-3xl font-bold"> Building Systems That Last</h2>
@@ -51,7 +50,6 @@ export async function AboutMe() {
             <p>{bio}</p>
           </div>
 
-          {/* Skills Grid */}
           <div className="grid grid-cols-2 gap-4">
             {coreStack && coreStack.length > 0 && (
               <div className="bg-surface/50 border-border space-y-2 rounded-lg border p-4">

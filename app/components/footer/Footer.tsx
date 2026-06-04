@@ -1,13 +1,10 @@
-// app/components/Footer.tsx
-import { getContactMe } from '@/lib/contact-me';
+import { getSocialLinks } from '@/lib/contact-me';
 import { Icon, IconName } from '../icons';
 
 export async function Footer() {
-  const contact = await getContactMe();
+  const socials = await getSocialLinks();
 
-  if (!contact) return null;
-
-  const { socialLinksCollection } = contact;
+  if (!socials) return null;
 
   return (
     <footer className="border-border mt-24 border-t py-8">
@@ -16,7 +13,7 @@ export async function Footer() {
           <p>© 2026 Christian Dennis Dulay. Built with Next.js & Tailwind CSS.</p>
         </div>
         <ul className="flex items-center gap-4" aria-label="Social links">
-          {socialLinksCollection?.items?.map((link) => (
+          {socials.map((link) => (
             <li key={link?.sys.id}>
               <a
                 href={link?.url!}

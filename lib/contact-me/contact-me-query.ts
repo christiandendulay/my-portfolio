@@ -11,16 +11,21 @@ export const GET_CONTACT_ME = gql`
         description
         email
         title
+      }
+    }
+  }
+`;
+
+export const GET_SOCIAL_LINKS = gql`
+  query GetSocialLink {
+    contactMeCollection(limit: 1, where: { singletonId: "contact-me" }) {
+      items {
         socialLinksCollection {
           items {
             sys {
               id
             }
             label
-            icon {
-              url
-              title
-            }
             url
             platformName
           }
