@@ -4,5 +4,5 @@ import { AboutMe } from '@/types/contentful';
 
 export async function getAboutMe(): Promise<AboutMe> {
   const data = await client.request(GET_ABOUT_ME);
-  return (data as any).aboutMeCollection?.items?.[0] ?? null;
+  return data.aboutMeCollection?.items?.[0] ?? null;
 }
