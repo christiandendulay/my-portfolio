@@ -40,7 +40,9 @@ const TimelineItem = ({ job, index }: { job: Job | null; index: number }) => {
 
         <div className="text-muted mb-3 text-sm font-medium">
           {company}
-          <span className="flex items-center gap-1">
+          <span
+            className={`flex items-center justify-end gap-1 ${isRight ? 'md:justify-start' : ''}`}
+          >
             <LocationIcon
               location={job.locationType!}
               className={`h-3.5 w-3.5 ${isFirst ? 'text-teal' : ''}`}

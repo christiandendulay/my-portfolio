@@ -8,6 +8,7 @@ export const GET_HEADER_NAVIGATION = gql`
           id
         }
         title
+        logoText
         navigationItemsCollection(limit: 5) {
           items {
             sys {

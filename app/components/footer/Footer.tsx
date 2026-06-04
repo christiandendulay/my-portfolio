@@ -1,16 +1,17 @@
 import { getSocialLinks } from '@/lib/contact-me';
 import { Icon, IconName } from '../icons';
+import { getHeaderNavigation } from '@/lib/header-navigation';
 
 export async function Footer() {
   const socials = await getSocialLinks();
-
+  const { logoText } = await getHeaderNavigation();
   if (!socials) return null;
 
   return (
     <footer className="border-border mt-24 border-t py-8">
       <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-4 px-6 md:flex-row">
         <div className="text-muted text-sm">
-          <p>© 2026 Christian Dennis Dulay. Built with Next.js & Tailwind CSS.</p>
+          <p>{logoText}</p>
         </div>
         <ul className="flex items-center gap-4" aria-label="Social links">
           {socials.map((link) => (

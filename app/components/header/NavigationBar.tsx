@@ -8,7 +8,6 @@ import { NavigationLink } from './NavigationLink';
 import { MenuNavigation } from './MenuNavigation';
 
 export function NavigationBar({ navigation }: { navigation: HeaderNavigation }) {
-  const [mobileOpen, setMobileOpen] = useState(false);
   const { logoText, logoLink, navigationItemsCollection } = navigation;
 
   const handleLogoClick = (e: React.MouseEvent) => {
@@ -25,7 +24,6 @@ export function NavigationBar({ navigation }: { navigation: HeaderNavigation }) 
     <nav className="sticky top-0 z-50 border-b border-[#D4CFC7] bg-[#FFFFFF]/90 backdrop-blur-md transition-colors duration-300 dark:border-[#3A3A38] dark:bg-[#242422]/90">
       <div className="mx-auto max-w-4xl px-6">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
           {logoLink?.startsWith('#') ? (
             <a
               href={logoLink}
@@ -43,7 +41,6 @@ export function NavigationBar({ navigation }: { navigation: HeaderNavigation }) 
             </Link>
           )}
 
-          {/* Desktop Navigation */}
           <div className="hidden items-center gap-8 md:flex">
             {navigationItemsCollection?.items.map((navItem) => (
               <NavigationLink key={navItem?.sys.id} item={navItem} />
