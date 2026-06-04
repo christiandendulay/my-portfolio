@@ -20,6 +20,7 @@ export const GET_EXPERIENCES = gql`
             locationType
             endDate
             role
+            description
           }
         }
       }

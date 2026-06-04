@@ -2,6 +2,7 @@ import { ThemeProvider, ThemeToggle } from './components/theme';
 import Script from 'next/script';
 import './globals.css';
 import { HeaderNavigation } from './components/header/HeaderNavigation';
+import { Footer } from './components/footer/Footer';
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -32,6 +33,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <HeaderNavigation />
           <main>{children}</main>
           <ThemeToggle />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
