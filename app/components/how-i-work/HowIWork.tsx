@@ -4,7 +4,7 @@ import { PrincipleCard } from './PrincipleCard';
 
 export async function HowIWork() {
   const howIWork = await getHowIWork();
-  const { principlesCollection, title } = howIWork;
+  const { principlesCollection, title, subtitle } = howIWork;
 
   if (!principlesCollection?.items) return null;
 
@@ -12,9 +12,7 @@ export async function HowIWork() {
     <section id="how-i-work" className="space-y-12">
       <div className="space-y-4 text-center">
         <h2 className="text-heading text-3xl font-bold">{title}</h2>
-        <p className="text-muted mx-auto max-w-2xl text-sm">
-          A systematic approach to solving complex problems and delivering resilient software.
-        </p>
+        <p className="text-muted mx-auto max-w-2xl text-sm">{subtitle}</p>
       </div>
 
       <ul className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">

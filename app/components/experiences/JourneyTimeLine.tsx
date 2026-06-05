@@ -70,8 +70,8 @@ export async function JourneyTimeLine() {
   const jobs = jobExperiencesCollection?.items.filter(Boolean) ?? [];
 
   return (
-    <section id="experiences" className="mx-auto max-w-4xl px-5 py-16">
-      <h1 className="text-heading mb-16 text-center text-3xl font-bold md:text-4xl">{title}</h1>
+    <section id="experiences" className="mx-auto mb-0 max-w-4xl px-5 py-8">
+      <h2 className="text-heading mb-16 text-center text-3xl font-bold md:text-4xl">{title}</h2>
 
       <div className="relative flex flex-col">
         <div

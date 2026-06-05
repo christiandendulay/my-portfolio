@@ -9,6 +9,7 @@ export const GET_HOW_I_WORK = gql`
         }
         singletonId
         title
+        subtitle
         principlesCollection(order: [order_ASC]) {
           items {
             sys {
