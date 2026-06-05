@@ -23,3 +23,14 @@ export const GET_ABOUT_ME = gql`
     }
   }
 `;
+
+export const GET_RESUME = gql`
+  query Resume {
+    assetCollection(where: { title: "Resume" }, limit: 1) {
+      items {
+        url
+        title
+      }
+    }
+  }
+`;
