@@ -9,6 +9,10 @@ import RemoteSvg from '@/icons/remote.svg';
 import HybridSvg from '@/icons/hybrid.svg';
 import OnSiteSvg from '@/icons/onsite.svg';
 import FallbackSvg from '@/icons/fallback.svg';
+import Download from '@/icons/download-icon.svg';
+import ArrowRight from '@/icons/arrow-right.svg';
+import ArrowLeft from '@/icons/arrow-left.svg';
+import ExternalLink from '@/icons/external-link.svg';
 
 export type IconName =
   | 'email'
@@ -21,7 +25,11 @@ export type IconName =
   | 'remote'
   | 'hybrid'
   | 'onsite'
-  | 'fallback';
+  | 'fallback'
+  | 'download'
+  | 'arrow-right'
+  | 'arrow-left'
+  | 'external-link';
 
 export function Icon({ name, className }: { name: IconName; className?: string }) {
   switch (name) {
@@ -45,6 +53,14 @@ export function Icon({ name, className }: { name: IconName; className?: string }
       return <HybridSvg className={className} />;
     case 'onsite':
       return <OnSiteSvg className={className} />;
+    case 'download':
+      return <Download className={className} />;
+    case 'arrow-right':
+      return <ArrowRight className={className} />;
+    case 'arrow-left':
+      return <ArrowLeft className={className} />;
+    case 'external-link':
+      return <ExternalLink className={className} />;
     case 'fallback':
     default:
       return <FallbackSvg className={className} />;
