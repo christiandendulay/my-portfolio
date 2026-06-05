@@ -57,6 +57,7 @@ a:hover {
   color: var(--teal-hover);
 }
 
+a,
 button {
   cursor: pointer;
 }
