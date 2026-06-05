@@ -4,6 +4,49 @@ import Link from 'next/link';
 import { RichTextRenderer } from '@/app/components/rich-text/RichText';
 import { Icon } from '@/app/components/icons';
 import { Divider } from '@/app/components/divider/Divider';
+import type { Metadata } from 'next';
+import { AUTHOR, SITE_NAME, SITE_URL } from '@/site/site';
+
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await props.params;
+  const project = await getProjectBySlug(slug);
+
+  if (!project) {
+    return { title: 'Project Not Found' };
+  }
+
+  const title = `${project.title} | ${AUTHOR}`;
+  const description = `Portfolio Website — a project by ${AUTHOR}.`;
+  const url = `${SITE_URL}/project/${slug}`;
+
+  return {
+    title,
+    description,
+    keywords: ['portfolio', 'project', 'web development', project.title!],
+    authors: [{ name: AUTHOR }],
+    creator: AUTHOR,
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: SITE_NAME,
+      type: 'article',
+      publishedTime: 'June 2026',
+      modifiedTime: 'June 2026',
+    },
+    alternates: {
+      canonical: url,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const slugs = await getAllSlugs();

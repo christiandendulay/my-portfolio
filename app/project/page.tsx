@@ -2,6 +2,24 @@ import { getAllProjects } from '@/lib/project';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Icon } from '../components/icons';
+import { SITE_URL, AUTHOR, SITE_NAME } from '@/site/site';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: `Projects | ${AUTHOR}`,
+  description:
+    'A collection of my recent work — web apps, experiments, and open source contributions.',
+  openGraph: {
+    title: `Projects | ${AUTHOR}`,
+    description: 'A collection of my recent work.',
+    url: `${SITE_URL}/projects`,
+    siteName: SITE_NAME,
+    type: 'website',
+  },
+  alternates: {
+    canonical: `${SITE_URL}/projects`,
+  },
+};
 
 export const revalidate = 60;
 
