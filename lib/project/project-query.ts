@@ -7,6 +7,13 @@ export const GET_ALL_PROJECTS = gql`
         sys {
           id
         }
+        tags
+        repoUrl
+        liveDemo
+        thumbnail {
+          url
+          title
+        }
         title
         slug
         description {
@@ -23,6 +30,13 @@ export const GET_PROJECT_BY_SLUG = gql`
       items {
         sys {
           id
+        }
+        liveDemo
+        tags
+        repoUrl
+        thumbnail {
+          url
+          title
         }
         title
         slug
